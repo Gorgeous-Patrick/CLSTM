@@ -1,0 +1,12 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+	"name": "Profiling",
+  "image": "intel/oneapi-basekit",
+	"customizations": {
+    "vscode": {
+      "extensions": ["ms-vscode.cpptools", "ms-vscode.cpptools-extension-pack"]
+    }
+  },
+	"runArgs": ["--ulimit=nofile=1024:8192"]
+}
