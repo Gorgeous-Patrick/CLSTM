@@ -146,6 +146,9 @@ int main() {
     Matrix Bo = {malloc(d_model * sizeof(float)), 1, d_model};
     Matrix output = {malloc(seq_len * d_model * sizeof(float)), seq_len, d_model};
 
+    for (int i = 0; i < 1000; i++) {
+
+    
     // Initialize random values for testing
     for (int i = 0; i < seq_len * d_model; i++) {
         Q.data[i] = K.data[i] = V.data[i] = (float)(rand() % 100) / 100.0f;
@@ -161,12 +164,13 @@ int main() {
     multihead_attention(&Q, &K, &V, &Wq, &Wk, &Wv, &Wo, &Bq, &Bk, &Bv, &Bo, num_heads, &output);
 
     // Print output
-    printf("Multihead Attention Output:\n");
-    for (int i = 0; i < output.rows; i++) {
-        for (int j = 0; j < output.cols; j++) {
-            printf("%.2f ", output.data[i * output.cols + j]);
-        }
-        printf("\n");
+    // printf("Multihead Attention Output:\n");
+    // for (int i = 0; i < output.rows; i++) {
+    //     for (int j = 0; j < output.cols; j++) {
+    //         printf("%.2f ", output.data[i * output.cols + j]);
+    //     }
+    //     printf("\n");
+    // }
     }
 
     // Free memory
